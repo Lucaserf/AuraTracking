@@ -1,1 +1,12 @@
-{}
+{
+    "nico": {
+        "score": -2,
+        "history": [
+            {
+                "update": -2,
+                "motivation": "Vuole troppe features",
+                "timestamp": "2025-04-23T14:06:26.609563+00:00"
+            }
+        ]
+    }
+}
