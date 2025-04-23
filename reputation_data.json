@@ -1,11 +1,31 @@
 {
-    "nico": {
-        "score": -2,
+    "lr": {
+        "score": 1000,
         "history": [
             {
-                "update": -2,
-                "motivation": "Vuole troppe features",
-                "timestamp": "2025-04-23T14:06:26.609563+00:00"
+                "update": 1000,
+                "motivation": "Yes",
+                "timestamp": "2025-04-23T15:34:18.488716+00:00"
+            }
+        ]
+    },
+    "serf": {
+        "score": 10,
+        "history": [
+            {
+                "update": 10,
+                "motivation": "tum tum",
+                "timestamp": "2025-04-23T15:37:03.218094+00:00"
+            }
+        ]
+    },
+    "nico": {
+        "score": -10,
+        "history": [
+            {
+                "update": -10,
+                "motivation": "tum tum",
+                "timestamp": "2025-04-23T15:37:28.905001+00:00"
             }
         ]
     }
