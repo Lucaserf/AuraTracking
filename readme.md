@@ -149,7 +149,7 @@ The server exposes the following endpoints:
 *   **Description:** Removes all user reputation data from the server's memory. Use with caution! Intended primarily for testing purposes.
 *   **Example Request (`curl`):**
     ```bash
-    curl -X POST http://127.0.0.1:5000/clear
+    curl -X POST http://192.168.17.51:5000/clear
     ```
 *   **Success Response (200 OK):**
     ```json
