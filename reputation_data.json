@@ -1,0 +1,10 @@
+{
+    "alice": {
+        "score": 10,
+        "last_motivation": "Solved a tricky bug"
+    },
+    "carlo": {
+        "score": 10,
+        "last_motivation": "Solved a tricky bug"
+    }
+}

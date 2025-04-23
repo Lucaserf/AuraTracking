@@ -44,7 +44,7 @@ A simple Flask web server to track reputation points for users identified by nam
     ```
      * Serving Flask app 'app'
      * Debug mode: on
-     * Running on http://127.0.0.1:5000 (Press CTRL+C to quit)
+     * Running on http://192.168.17.51:5000 (Press CTRL+C to quit)
      * Restarting with stat
      * Debugger is active!
      * Debugger PIN: ...
@@ -70,12 +70,12 @@ The server exposes the following endpoints:
     # Add 10 points to 'alice' with motivation
     curl -X POST -H "Content-Type: application/json" \
          -d '{"update": 10, "motivation": "Solved a tricky bug"}' \
-         http://127.0.0.1:5000/reputation/alice
+         http://192.168.17.51:5000/reputation/alice
 
     # Subtract 3 points from 'bob' (no motivation)
     curl -X POST -H "Content-Type: application/json" \
          -d '{"update": -3}' \
-         http://127.0.0.1:5000/reputation/bob
+         http://192.168.17.51:5000/reputation/bob
     ```
 *   **Success Response (200 OK):**
     ```json
@@ -106,7 +106,7 @@ The server exposes the following endpoints:
     *   `<name>`: The name of the user (case-insensitive).
 *   **Example Request (`curl`):**
     ```bash
-    curl http://127.0.0.1:5000/reputation/alice
+    curl http://192.168.17.51:5000/reputation/alice
     ```
 *   **Success Response (200 OK):**
     ```json
@@ -125,7 +125,7 @@ The server exposes the following endpoints:
 *   **Description:** Returns a list of all users, sorted by their reputation score in descending order (highest score first).
 *   **Example Request (`curl`):**
     ```bash
-    curl http://127.0.0.1:5000/ranking
+    curl http://192.168.17.51:5000/ranking
     ```
 *   **Success Response (200 OK):**
     ```json
@@ -164,7 +164,7 @@ The server exposes the following endpoints:
 *   **Description:** A simple endpoint to check if the server is running.
 *   **Example Request (`curl`):**
     ```bash
-    curl http://127.0.0.1:5000/
+    curl http://192.168.17.51:5000/
     ```
 *   **Success Response (200 OK):**
     ```
