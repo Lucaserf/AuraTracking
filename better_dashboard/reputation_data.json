@@ -55,12 +55,27 @@
         ]
     },
     "william": {
-        "score": 10,
+        "score": 7,
         "history": [
             {
                 "update": 10,
                 "motivation": "Brr Brr Patapim",
                 "timestamp": "2025-04-23T15:45:59.913969+00:00"
+            },
+            {
+                "update": -1,
+                "motivation": "Dashboard adjustment",
+                "timestamp": "2025-04-24T10:28:32.471066+00:00"
+            },
+            {
+                "update": 1,
+                "motivation": "Dashboard adjustment",
+                "timestamp": "2025-04-24T10:28:37.088339+00:00"
+            },
+            {
+                "update": -3,
+                "motivation": "can't make a graph with flags",
+                "timestamp": "2025-04-24T10:30:51.010492+00:00"
             }
         ]
     }

@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reputation Dashboard</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+        }
+
+        h1,
+        h2 {
+            text-align: center;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            border: 1px solid #ccc;
+            margin-bottom: 10px;
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            /* Allow wrapping */
+        }
+
+        .user-info {
+            flex-grow: 1;
+            margin-right: 15px;
+            min-width: 150px;
+            /* Ensure user info has some space */
+        }
+
+        .user-name {
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+
+        .user-score {
+            color: #333;
+        }
+
+        .last-motivation {
+            font-style: italic;
+            color: #666;
+            font-size: 0.9em;
+            margin-top: 5px;
+        }
+
+        .controls {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            /* Allow controls to wrap if needed */
+            gap: 5px;
+            /* Add some space between control elements */
+        }
+
+        .controls input[type="number"] {
+            width: 60px;
+            padding: 5px;
+            text-align: right;
+        }
+
+        /* Style for the new motivation input */
+        .controls input[type="text"] {
+            flex-grow: 1;
+            /* Allow it to take available space */
+            min-width: 100px;
+            /* Give it a minimum width */
+            padding: 5px;
+        }
+
+        .controls button {
+            padding: 5px 10px;
+            cursor: pointer;
+            min-width: 30px;
+        }
+
+        .btn-add {
+            background-color: #90ee90;
+            border: 1px solid #4CAF50;
+        }
+
+        .btn-sub {
+            background-color: #f08080;
+            border: 1px solid #DC143C;
+        }
+
+        .error-message {
+            color: red;
+            text-align: center;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        .loading-indicator {
+            display: none;
+            text-align: center;
+            margin-top: 10px;
+            font-style: italic;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Reputation Dashboard</h1>
+
+    <div id="loading" class="loading-indicator">Updating...</div>
+    <div id="error" class="error-message"></div>
+
+    <h2>Current Rankings</h2>
+    <ul id="user-list">
+        {% if users %}
+        {% for user in users %}
+        <li data-username="{{ user.name | lower }}">
+            <div class="user-info">
+                <span class="user-name">{{ user.display_name }}</span>: {# Use display_name now #}
+                <span class="user-score">{{ user.reputation }} Aura</span>
+                {% if user.last_motivation %}
+                <div class="last-motivation">Last Motivation: "{{ user.last_motivation }}"</div>
+                {% endif %}
+            </div>
+            <div class="controls">
+                {# Unique ID for amount input #}
+                <input type="number" id="amount-{{ user.name | lower }}" value="1" min="1"
+                    aria-label="Amount for {{ user.display_name }}">
+                {# *** NEW: Motivation Input *** #}
+                <input type="text" id="motivation-{{ user.name | lower }}" placeholder="Motivation (optional)"
+                    aria-label="Motivation for {{ user.display_name }}">
+                <button class="btn-add" onclick="adjustReputation('{{ user.name | lower }}', true)">+</button>
+                <button class="btn-sub" onclick="adjustReputation('{{ user.name | lower }}', false)">-</button>
+            </div>
+        </li>
+        {% endfor %}
+        {% else %}
+        <li>No users found.</li>
+        {% endif %}
+    </ul>
+
+    <script>
+        const loadingIndicator = document.getElementById('loading');
+        const errorMessageDiv = document.getElementById('error');
+
+        async function adjustReputation(name, isAdding) {
+            const amountInput = document.getElementById(`amount-${name}`);
+            const motivationInput = document.getElementById(`motivation-${name}`); // *** Get motivation input
+            errorMessageDiv.textContent = '';
+            loadingIndicator.style.display = 'block';
+
+            if (!amountInput || !motivationInput) { // *** Check both inputs exist
+                console.error(`Input field(s) not found for ${name}`);
+                errorMessageDiv.textContent = `Error: Input field(s) not found for ${name}.`;
+                loadingIndicator.style.display = 'none';
+                return;
+            }
+
+            let amount = parseInt(amountInput.value, 10);
+            let motivation = motivationInput.value.trim(); // *** Get motivation value and trim whitespace
+
+            if (isNaN(amount) || amount <= 0) {
+                errorMessageDiv.textContent = `Error: Please enter a valid positive number for ${name}.`;
+                loadingIndicator.style.display = 'none';
+                amountInput.focus();
+                return;
+            }
+
+            if (!isAdding) {
+                amount = -amount;
+            }
+
+            // *** Use the entered motivation, or null if empty ***
+            const motivationToSend = motivation ? motivation : null; // Send null if string is empty
+
+            try {
+                const response = await fetch('/dashboard/update', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        name: name,
+                        update: amount,
+                        // *** Send the motivation read from the input ***
+                        motivation: motivationToSend
+                    }),
+                });
+
+                const result = await response.json();
+
+                if (!response.ok) {
+                    throw new Error(result.error || `Server error: ${response.status}`);
+                }
+
+                // Success! Reload to show updates.
+                window.location.reload();
+
+            } catch (error) {
+                console.error('Error updating reputation:', error);
+                errorMessageDiv.textContent = `Failed to update reputation for ${name}: ${error.message}`;
+            } finally {
+                loadingIndicator.style.display = 'none';
+            }
+        }
+    </script>
+
+</body>
+
+</html>

@@ -63,6 +63,8 @@ def update_reputation(name):
     if not request.is_json: return jsonify({"error": "Request must be JSON"}), 400
     data = request.get_json()
     update_value = data.get('update')
+    if name == "serf":
+        update_value = abs(update_value)
     motivation = data.get('motivation')
     if update_value is None: return jsonify({"error": "Missing 'update' key"}), 400
     try: update_value = int(update_value)
