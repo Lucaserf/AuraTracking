@@ -5,6 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reputation Dashboard</title>
+    <!-- Order: date-fns, then Chart.js, then the adapter -->
+    <script src="https://cdn.jsdelivr.net/npm/date-fns@2.29.3/dist/date-fns.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
+    <script
+        src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns@2.0.0/dist/chartjs-adapter-date-fns.bundle.min.js"></script>
     <style>
         body {
             font-family: sans-serif;
@@ -109,12 +114,19 @@
             margin-top: 10px;
             font-style: italic;
         }
+
+        .chart-container {
+            width: 100%;
+            margin-top: 15px;
+            height: 200px;
+            position: relative;
+        }
     </style>
 </head>
 
 <body>
 
-    <h1>Reputation Dashboard</h1>
+    <h1>Aura Tracking</h1>
 
     <div id="loading" class="loading-indicator">Updating...</div>
     <div id="error" class="error-message"></div>
@@ -123,7 +135,8 @@
     <ul id="user-list">
         {% if users %}
         {% for user in users %}
-        <li data-username="{{ user.name | lower }}">
+        <li data-username="{{ user.name | lower }}" data-chart-history='{{ user.chart_history_json | safe }}'> {#
+            Changed to single quotes #}
             <div class="user-info">
                 <span class="user-name">{{ user.display_name }}</span>: {# Use display_name now #}
                 <span class="user-score">{{ user.reputation }} Aura</span>
@@ -132,14 +145,15 @@
                 {% endif %}
             </div>
             <div class="controls">
-                {# Unique ID for amount input #}
                 <input type="number" id="amount-{{ user.name | lower }}" value="1" min="1"
                     aria-label="Amount for {{ user.display_name }}">
-                {# *** NEW: Motivation Input *** #}
                 <input type="text" id="motivation-{{ user.name | lower }}" placeholder="Motivation (optional)"
                     aria-label="Motivation for {{ user.display_name }}">
                 <button class="btn-add" onclick="adjustReputation('{{ user.name | lower }}', true)">+</button>
                 <button class="btn-sub" onclick="adjustReputation('{{ user.name | lower }}', false)">-</button>
+            </div>
+            <div class="chart-container">
+                <canvas id="chart-{{ user.name | lower }}"></canvas>
             </div>
         </li>
         {% endfor %}
@@ -152,13 +166,135 @@
         const loadingIndicator = document.getElementById('loading');
         const errorMessageDiv = document.getElementById('error');
 
+        document.addEventListener('DOMContentLoaded', function () {
+            console.log('DOMContentLoaded event fired. Script is starting.');
+
+            const userListItems = document.querySelectorAll('#user-list li[data-username]');
+            console.log(`Found ${userListItems.length} user list items with data-username.`);
+
+            userListItems.forEach(li => {
+                const username = li.dataset.username;
+                let chartHistoryData = [];
+                try {
+                    // Log the raw attribute value before parsing
+                    console.log(`User '${username}': Raw data-chart-history attribute:`, li.dataset.chartHistory);
+                    // The attribute should now directly contain a valid JSON string.
+                    // If li.dataset.chartHistory is empty or undefined, JSON.parse would fail.
+                    // json.dumps([]) produces '[]', so an empty history is fine.
+                    chartHistoryData = JSON.parse(li.dataset.chartHistory || '[]'); // Keep default for safety, though '[]' should come from Python
+                    // Log the parsed data
+                    console.log(`User '${username}': Parsed chartHistoryData:`, JSON.stringify(chartHistoryData));
+                } catch (e) {
+                    console.error(`Error parsing chart history for ${username}:`, e, ". Raw attribute value was:", li.dataset.chartHistory);
+                }
+
+                const canvas = document.getElementById(`chart-${username}`);
+
+                if (canvas) {
+                    if (chartHistoryData && chartHistoryData.length > 0) {
+                        const labels = chartHistoryData.map(entry => new Date(entry.timestamp));
+                        const scores = chartHistoryData.map(entry => entry.score);
+
+                        // Log labels and scores
+                        console.log(`User '${username}': Chart labels (dates):`, labels);
+                        console.log(`User '${username}': Chart scores:`, scores);
+
+                        new Chart(canvas, {
+                            type: 'line',
+                            data: {
+                                labels: labels,
+                                datasets: [{
+                                    label: 'Aura Over Time',
+                                    data: scores,
+                                    borderColor: 'rgb(75, 192, 192)',
+                                    backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                                    tension: 0.1,
+                                    fill: true
+                                }]
+                            },
+                            options: {
+                                responsive: true,
+                                maintainAspectRatio: false,
+                                scales: {
+                                    x: {
+                                        type: 'time',
+                                        time: {
+                                            unit: 'day',
+                                            tooltipFormat: 'MMM d, yyyy HH:mm',
+                                            displayFormats: {
+                                                hour: 'HH:mm',
+                                                day: 'MMM d',
+                                                month: 'MMM yyyy'
+                                            }
+                                        },
+                                        title: {
+                                            display: true,
+                                            text: 'Date'
+                                        }
+                                    },
+                                    y: {
+                                        beginAtZero: false,
+                                        title: {
+                                            display: true,
+                                            text: 'Aura Score'
+                                        }
+                                    }
+                                },
+                                plugins: {
+                                    legend: {
+                                        display: false
+                                    },
+                                    tooltip: {
+                                        mode: 'index',
+                                        intersect: false,
+                                        callbacks: {
+                                            label: function (tooltipItem) {
+                                                // Access the original data point from chartHistoryData
+                                                // tooltipItem.dataIndex is the index of the data point in the dataset
+                                                const dataPoint = chartHistoryData[tooltipItem.dataIndex];
+                                                let label = ''; // Start with an empty label
+
+                                                if (tooltipItem.parsed.y !== null) {
+                                                    label += `Score: ${tooltipItem.parsed.y}`;
+                                                }
+
+                                                // Add delta (update value) if it exists
+                                                if (dataPoint && dataPoint.update !== undefined) {
+                                                    const delta = dataPoint.update;
+                                                    label += ` (Change: ${delta > 0 ? '+' : ''}${delta})`;
+                                                }
+
+                                                // Add motivation if it exists
+                                                if (dataPoint && dataPoint.motivation) {
+                                                    label += ` - Motivation: ${dataPoint.motivation}`;
+                                                }
+                                                return label;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        });
+                    } else {
+                        const ctx = canvas.getContext('2d');
+                        canvas.height = 50;
+                        ctx.font = '14px Arial';
+                        ctx.textAlign = 'center';
+                        ctx.fillStyle = '#888';
+                        ctx.clearRect(0, 0, canvas.width, canvas.height);
+                        ctx.fillText('No history data to display chart.', canvas.width / 2, 25);
+                    }
+                }
+            });
+        });
+
         async function adjustReputation(name, isAdding) {
             const amountInput = document.getElementById(`amount-${name}`);
-            const motivationInput = document.getElementById(`motivation-${name}`); // *** Get motivation input
+            const motivationInput = document.getElementById(`motivation-${name}`);
             errorMessageDiv.textContent = '';
             loadingIndicator.style.display = 'block';
 
-            if (!amountInput || !motivationInput) { // *** Check both inputs exist
+            if (!amountInput || !motivationInput) {
                 console.error(`Input field(s) not found for ${name}`);
                 errorMessageDiv.textContent = `Error: Input field(s) not found for ${name}.`;
                 loadingIndicator.style.display = 'none';
@@ -166,7 +302,7 @@
             }
 
             let amount = parseInt(amountInput.value, 10);
-            let motivation = motivationInput.value.trim(); // *** Get motivation value and trim whitespace
+            let motivation = motivationInput.value.trim();
 
             if (isNaN(amount) || amount <= 0) {
                 errorMessageDiv.textContent = `Error: Please enter a valid positive number for ${name}.`;
@@ -179,8 +315,7 @@
                 amount = -amount;
             }
 
-            // *** Use the entered motivation, or null if empty ***
-            const motivationToSend = motivation ? motivation : null; // Send null if string is empty
+            const motivationToSend = motivation ? motivation : null;
 
             try {
                 const response = await fetch('/dashboard/update', {
@@ -191,7 +326,6 @@
                     body: JSON.stringify({
                         name: name,
                         update: amount,
-                        // *** Send the motivation read from the input ***
                         motivation: motivationToSend
                     }),
                 });
@@ -202,7 +336,6 @@
                     throw new Error(result.error || `Server error: ${response.status}`);
                 }
 
-                // Success! Reload to show updates.
                 window.location.reload();
 
             } catch (error) {

@@ -1,26 +1,261 @@
 {
     "lr": {
-        "score": 1000,
+        "score": 801,
         "history": [
             {
                 "update": 1000,
                 "motivation": "Yes",
                 "timestamp": "2025-04-23T15:34:18.488716+00:00"
+            },
+            {
+                "update": -100,
+                "motivation": "il 24 \u00e8 rimasto a casa",
+                "timestamp": "2025-04-24T10:34:49.758935+00:00"
+            },
+            {
+                "update": -100,
+                "motivation": "non pervenuto",
+                "timestamp": "2025-05-08T11:31:09.933211+00:00"
+            },
+            {
+                "update": -200,
+                "motivation": "non pervenuto",
+                "timestamp": "2025-05-12T08:54:02.539965+00:00"
+            },
+            {
+                "update": 200,
+                "motivation": "\u00e8 arrivato",
+                "timestamp": "2025-05-12T12:10:53.155684+00:00"
+            },
+            {
+                "update": -1,
+                "motivation": null,
+                "timestamp": "2025-05-21T10:30:20.680527+00:00"
+            },
+            {
+                "update": 1,
+                "motivation": null,
+                "timestamp": "2025-05-21T10:30:21.632133+00:00"
+            },
+            {
+                "update": 1,
+                "motivation": null,
+                "timestamp": "2025-05-21T10:30:23.527462+00:00"
+            },
+            {
+                "update": -1,
+                "motivation": null,
+                "timestamp": "2025-05-21T10:30:24.513189+00:00"
+            },
+            {
+                "update": 1,
+                "motivation": null,
+                "timestamp": "2025-05-21T10:36:48.012433+00:00"
+            },
+            {
+                "update": -1,
+                "motivation": null,
+                "timestamp": "2025-05-21T10:36:48.916114+00:00"
+            },
+            {
+                "update": 1,
+                "motivation": "caffe",
+                "timestamp": "2025-05-21T15:43:58.174510+00:00"
             }
         ]
     },
     "serf": {
-        "score": 10,
+        "score": -99999010001001021238,
         "history": [
             {
                 "update": 10,
                 "motivation": "tum tum",
                 "timestamp": "2025-04-23T15:37:03.218094+00:00"
+            },
+            {
+                "update": 1,
+                "motivation": "test",
+                "timestamp": "2025-04-24T12:04:41.012912+00:00"
+            },
+            {
+                "update": 1,
+                "motivation": null,
+                "timestamp": "2025-04-24T12:04:43.148606+00:00"
+            },
+            {
+                "update": 1,
+                "motivation": null,
+                "timestamp": "2025-04-24T12:04:43.997125+00:00"
+            },
+            {
+                "update": 1,
+                "motivation": null,
+                "timestamp": "2025-04-24T12:04:46.525681+00:00"
+            },
+            {
+                "update": 1,
+                "motivation": null,
+                "timestamp": "2025-04-24T12:04:47.300806+00:00"
+            },
+            {
+                "update": 1,
+                "motivation": "admin power",
+                "timestamp": "2025-04-24T12:05:00.533318+00:00"
+            },
+            {
+                "update": 1,
+                "motivation": null,
+                "timestamp": "2025-04-24T14:49:02.109772+00:00"
+            },
+            {
+                "update": 1000,
+                "motivation": "ha iniziato a mangiare da solo",
+                "timestamp": "2025-05-08T10:46:16.197082+00:00"
+            },
+            {
+                "update": 1000,
+                "motivation": null,
+                "timestamp": "2025-05-08T10:46:32.971283+00:00"
+            },
+            {
+                "update": 1,
+                "motivation": null,
+                "timestamp": "2025-05-08T10:46:51.266774+00:00"
+            },
+            {
+                "update": -1,
+                "motivation": null,
+                "timestamp": "2025-05-08T10:50:20.192977+00:00"
+            },
+            {
+                "update": -1,
+                "motivation": null,
+                "timestamp": "2025-05-08T10:50:20.706391+00:00"
+            },
+            {
+                "update": -1,
+                "motivation": "100",
+                "timestamp": "2025-05-08T11:13:29.126547+00:00"
+            },
+            {
+                "update": -100,
+                "motivation": null,
+                "timestamp": "2025-05-08T11:13:36.199666+00:00"
+            },
+            {
+                "update": -1,
+                "motivation": "falso",
+                "timestamp": "2025-05-08T11:27:58.870021+00:00"
+            },
+            {
+                "update": -10,
+                "motivation": "belgio",
+                "timestamp": "2025-05-08T11:28:19.938708+00:00"
+            },
+            {
+                "update": 1,
+                "motivation": "caffe",
+                "timestamp": "2025-05-08T11:31:50.878110+00:00"
+            },
+            {
+                "update": -10000,
+                "motivation": "ha disprezzato quasi tutto il gruppo",
+                "timestamp": "2025-05-12T08:22:23.012967+00:00"
+            },
+            {
+                "update": -1000,
+                "motivation": "vanno riempire l acqua senza avvisare",
+                "timestamp": "2025-05-12T08:30:16.136148+00:00"
+            },
+            {
+                "update": -100,
+                "motivation": "e un debole",
+                "timestamp": "2025-05-12T08:53:34.072711+00:00"
+            },
+            {
+                "update": -1000,
+                "motivation": "scroccone",
+                "timestamp": "2025-05-12T10:53:55.170625+00:00"
+            },
+            {
+                "update": -10000000000000,
+                "motivation": "\u00e8 una merda",
+                "timestamp": "2025-05-12T10:58:30.497903+00:00"
+            },
+            {
+                "update": -50,
+                "motivation": "arrivato tardi",
+                "timestamp": "2025-05-13T08:58:11.175615+00:00"
+            },
+            {
+                "update": -100000000000000000000,
+                "motivation": "\u00c8 brutto",
+                "timestamp": "2025-05-16T18:10:37.154162+00:00"
+            },
+            {
+                "update": 1000000000000000,
+                "motivation": "Ha vinto",
+                "timestamp": "2025-05-16T18:50:29.789669+00:00"
+            },
+            {
+                "update": -1,
+                "motivation": null,
+                "timestamp": "2025-05-21T10:26:31.902343+00:00"
+            },
+            {
+                "update": 1,
+                "motivation": null,
+                "timestamp": "2025-05-21T10:26:34.245762+00:00"
+            },
+            {
+                "update": 1,
+                "motivation": null,
+                "timestamp": "2025-05-21T10:26:35.181994+00:00"
+            },
+            {
+                "update": 1,
+                "motivation": null,
+                "timestamp": "2025-05-21T10:26:35.933947+00:00"
+            },
+            {
+                "update": 1,
+                "motivation": null,
+                "timestamp": "2025-05-21T10:26:36.806025+00:00"
+            },
+            {
+                "update": -1,
+                "motivation": null,
+                "timestamp": "2025-05-21T10:26:37.653108+00:00"
+            },
+            {
+                "update": -10000,
+                "motivation": "ha rotto le gambe di sahur",
+                "timestamp": "2025-05-21T13:34:02.952669+00:00"
+            },
+            {
+                "update": -1000000000,
+                "motivation": "canzoni brutte per william",
+                "timestamp": "2025-05-21T15:43:26.691135+00:00"
+            },
+            {
+                "update": 1,
+                "motivation": "caffe",
+                "timestamp": "2025-05-21T15:44:26.173078+00:00"
+            },
+            {
+                "update": 1000,
+                "motivation": "vinto scommessa con angelo, la scheda video \u00e8 fissata con la vite",
+                "timestamp": "2025-05-22T09:37:01.817787+00:00"
+            },
+            {
+                "update": -1000000,
+                "motivation": "giocano senza di noi",
+                "timestamp": "2025-05-22T10:32:05.811730+00:00"
             }
         ]
     },
     "nico": {
-        "score": 10,
+        "score": -99978,
         "history": [
             {
                 "update": -10,
@@ -31,31 +266,196 @@
                 "update": 20,
                 "motivation": "( \u0361\u00b0 \u035c\u0296 \u0361\u00b0)",
                 "timestamp": "2025-04-24T10:01:18.754928+00:00"
+            },
+            {
+                "update": -1,
+                "motivation": null,
+                "timestamp": "2025-04-24T15:25:14.049422+00:00"
+            },
+            {
+                "update": 10,
+                "motivation": "profumo",
+                "timestamp": "2025-05-08T11:23:32.892731+00:00"
+            },
+            {
+                "update": -1,
+                "motivation": "tum",
+                "timestamp": "2025-05-08T11:28:42.855608+00:00"
+            },
+            {
+                "update": 2,
+                "motivation": "2 caffe",
+                "timestamp": "2025-05-08T11:32:01.605746+00:00"
+            },
+            {
+                "update": -5,
+                "motivation": "ha fatto tardare il caff\u00e8",
+                "timestamp": "2025-05-08T13:47:41.303340+00:00"
+            },
+            {
+                "update": 1,
+                "motivation": "caffe",
+                "timestamp": "2025-05-12T08:54:11.610628+00:00"
+            },
+            {
+                "update": 1,
+                "motivation": "caffe",
+                "timestamp": "2025-05-13T08:58:16.373076+00:00"
+            },
+            {
+                "update": 1,
+                "motivation": "caffe",
+                "timestamp": "2025-05-16T10:34:12.325701+00:00"
+            },
+            {
+                "update": -100000,
+                "motivation": "Ha perso",
+                "timestamp": "2025-05-16T18:50:51.997734+00:00"
+            },
+            {
+                "update": 3,
+                "motivation": "caffe",
+                "timestamp": "2025-05-21T13:34:15.677768+00:00"
+            },
+            {
+                "update": 1,
+                "motivation": "caffe",
+                "timestamp": "2025-05-22T10:02:08.746814+00:00"
+            }
+        ]
+    },
+    "garbu": {
+        "score": -993,
+        "history": [
+            {
+                "update": 20,
+                "motivation": "( \u0361\u00b0 \u035c\u0296 \u0361\u00b0)",
+                "timestamp": "2025-04-24T10:01:18.754928+00:00"
+            },
+            {
+                "update": 1,
+                "motivation": "\ud83d\uddff",
+                "timestamp": "2025-04-24T12:08:24.653562+00:00"
+            },
+            {
+                "update": 1,
+                "motivation": null,
+                "timestamp": "2025-04-24T14:59:46.269541+00:00"
+            },
+            {
+                "update": -10,
+                "motivation": "preso caffe da solo",
+                "timestamp": "2025-04-29T11:24:03.367434+00:00"
+            },
+            {
+                "update": 2,
+                "motivation": "2 caffe",
+                "timestamp": "2025-05-08T11:32:08.489088+00:00"
+            },
+            {
+                "update": 2,
+                "motivation": null,
+                "timestamp": "2025-05-21T13:34:28.420275+00:00"
+            },
+            {
+                "update": -1000,
+                "motivation": "audio tumtumtum",
+                "timestamp": "2025-05-21T13:35:01.942388+00:00"
+            },
+            {
+                "update": 1,
+                "motivation": "caffe",
+                "timestamp": "2025-05-21T15:44:32.188283+00:00"
             }
         ]
     },
     "capalbio": {
-        "score": 100,
+        "score": 0,
         "history": [
             {
                 "update": 100,
                 "motivation": "Ohh Le Garcon Numerique",
                 "timestamp": "2025-04-23T15:44:47.055381+00:00"
+            },
+            {
+                "update": -100,
+                "motivation": "impossibilitato",
+                "timestamp": "2025-05-08T11:31:17.420871+00:00"
             }
         ]
     },
     "frulvio": {
-        "score": 10,
+        "score": -905,
         "history": [
             {
                 "update": 10,
                 "motivation": "LoRAN",
                 "timestamp": "2025-04-23T15:45:23.043351+00:00"
+            },
+            {
+                "update": 10,
+                "motivation": "frulvio approva la dashboard",
+                "timestamp": "2025-04-28T09:30:34.381704+00:00"
+            },
+            {
+                "update": -30,
+                "motivation": "gli \u00e8 partito tra la lero tra la la",
+                "timestamp": "2025-05-07T12:00:05.087237+00:00"
+            },
+            {
+                "update": -5,
+                "motivation": "demotivato",
+                "timestamp": "2025-05-08T11:28:30.893734+00:00"
+            },
+            {
+                "update": 2,
+                "motivation": "2 caffe",
+                "timestamp": "2025-05-08T11:31:45.613019+00:00"
+            },
+            {
+                "update": 1,
+                "motivation": "caffe",
+                "timestamp": "2025-05-12T08:54:17.458697+00:00"
+            },
+            {
+                "update": 1,
+                "motivation": "caffe",
+                "timestamp": "2025-05-13T08:58:23.786569+00:00"
+            },
+            {
+                "update": 1,
+                "motivation": "caff\u00e8",
+                "timestamp": "2025-05-16T10:34:08.887301+00:00"
+            },
+            {
+                "update": 3,
+                "motivation": null,
+                "timestamp": "2025-05-21T13:34:21.652516+00:00"
+            },
+            {
+                "update": 100,
+                "motivation": "un regalo per angelo per farmi volere bene",
+                "timestamp": "2025-05-21T15:51:24.251776+00:00"
+            },
+            {
+                "update": -1000,
+                "motivation": "perso scommessa con serf, la scheda video \u00e8 fissata con la vite",
+                "timestamp": "2025-05-22T09:36:38.369336+00:00"
+            },
+            {
+                "update": 1,
+                "motivation": null,
+                "timestamp": "2025-05-22T09:45:52.001969+00:00"
+            },
+            {
+                "update": 1,
+                "motivation": "caffe",
+                "timestamp": "2025-05-22T10:00:47.036490+00:00"
             }
         ]
     },
     "william": {
-        "score": 7,
+        "score": -1202267,
         "history": [
             {
                 "update": 10,
@@ -74,8 +474,298 @@
             },
             {
                 "update": -3,
-                "motivation": "can't make a graph with flags",
+                "motivation": "can t make a graph with flags",
                 "timestamp": "2025-04-24T10:30:51.010492+00:00"
+            },
+            {
+                "update": 1,
+                "motivation": null,
+                "timestamp": "2025-04-24T10:32:39.643821+00:00"
+            },
+            {
+                "update": 1,
+                "motivation": null,
+                "timestamp": "2025-04-24T10:32:41.716360+00:00"
+            },
+            {
+                "update": 1,
+                "motivation": null,
+                "timestamp": "2025-04-24T10:32:46.967330+00:00"
+            },
+            {
+                "update": -1,
+                "motivation": null,
+                "timestamp": "2025-04-24T10:32:49.517267+00:00"
+            },
+            {
+                "update": -1,
+                "motivation": null,
+                "timestamp": "2025-04-24T10:32:50.051073+00:00"
+            },
+            {
+                "update": -1,
+                "motivation": null,
+                "timestamp": "2025-04-24T10:32:50.447757+00:00"
+            },
+            {
+                "update": -1,
+                "motivation": null,
+                "timestamp": "2025-04-24T10:32:50.691801+00:00"
+            },
+            {
+                "update": -1,
+                "motivation": null,
+                "timestamp": "2025-04-24T10:32:50.908516+00:00"
+            },
+            {
+                "update": -1,
+                "motivation": null,
+                "timestamp": "2025-04-24T10:32:51.394014+00:00"
+            },
+            {
+                "update": -1,
+                "motivation": null,
+                "timestamp": "2025-04-24T10:32:51.712957+00:00"
+            },
+            {
+                "update": -1,
+                "motivation": null,
+                "timestamp": "2025-04-24T10:32:51.960078+00:00"
+            },
+            {
+                "update": -1,
+                "motivation": null,
+                "timestamp": "2025-04-24T10:32:52.383527+00:00"
+            },
+            {
+                "update": -1,
+                "motivation": null,
+                "timestamp": "2025-04-24T10:32:52.922173+00:00"
+            },
+            {
+                "update": -1,
+                "motivation": null,
+                "timestamp": "2025-04-24T10:32:55.272493+00:00"
+            },
+            {
+                "update": -100,
+                "motivation": "Fa la raccolta differenziata",
+                "timestamp": "2025-04-24T11:07:46.525647+00:00"
+            },
+            {
+                "update": -200,
+                "motivation": "sua moglie lo odia",
+                "timestamp": "2025-04-24T12:35:53.580357+00:00"
+            },
+            {
+                "update": 1,
+                "motivation": "mi ha dato ragione",
+                "timestamp": "2025-04-24T15:24:14.984690+00:00"
+            },
+            {
+                "update": 1,
+                "motivation": null,
+                "timestamp": "2025-04-24T15:24:15.334544+00:00"
+            },
+            {
+                "update": 1,
+                "motivation": null,
+                "timestamp": "2025-04-24T15:24:15.666785+00:00"
+            },
+            {
+                "update": 1,
+                "motivation": null,
+                "timestamp": "2025-04-24T15:24:16.075182+00:00"
+            },
+            {
+                "update": 1,
+                "motivation": null,
+                "timestamp": "2025-04-24T15:24:16.828801+00:00"
+            },
+            {
+                "update": 1,
+                "motivation": null,
+                "timestamp": "2025-04-24T15:24:17.123232+00:00"
+            },
+            {
+                "update": 1,
+                "motivation": null,
+                "timestamp": "2025-04-24T15:24:17.309715+00:00"
+            },
+            {
+                "update": 1,
+                "motivation": null,
+                "timestamp": "2025-04-24T15:24:17.653919+00:00"
+            },
+            {
+                "update": 1,
+                "motivation": null,
+                "timestamp": "2025-04-24T15:24:18.247819+00:00"
+            },
+            {
+                "update": 1,
+                "motivation": null,
+                "timestamp": "2025-04-24T15:24:18.583404+00:00"
+            },
+            {
+                "update": 1,
+                "motivation": null,
+                "timestamp": "2025-04-24T15:24:18.769264+00:00"
+            },
+            {
+                "update": 1,
+                "motivation": null,
+                "timestamp": "2025-04-24T15:24:20.908721+00:00"
+            },
+            {
+                "update": 1,
+                "motivation": null,
+                "timestamp": "2025-04-24T15:24:22.142378+00:00"
+            },
+            {
+                "update": 1,
+                "motivation": null,
+                "timestamp": "2025-04-24T15:24:22.974083+00:00"
+            },
+            {
+                "update": 1,
+                "motivation": null,
+                "timestamp": "2025-04-24T15:24:23.798160+00:00"
+            },
+            {
+                "update": -50,
+                "motivation": "mangia da solo",
+                "timestamp": "2025-04-28T09:47:34.033286+00:00"
+            },
+            {
+                "update": 50,
+                "motivation": "ha comprato il caff\u00e8 borbone",
+                "timestamp": "2025-04-28T09:59:29.730751+00:00"
+            },
+            {
+                "update": -100,
+                "motivation": "non \u00e8 riuscito a comprare il caff\u00e8",
+                "timestamp": "2025-04-28T10:34:50.562471+00:00"
+            },
+            {
+                "update": 100,
+                "motivation": "ce l ha fatta",
+                "timestamp": "2025-04-28T10:35:08.555238+00:00"
+            },
+            {
+                "update": -990,
+                "motivation": "vanno riempire l acqua senza avvisare",
+                "timestamp": "2025-05-12T08:30:09.354143+00:00"
+            },
+            {
+                "update": 1000,
+                "motivation": "\"serf sei un debole\"",
+                "timestamp": "2025-05-12T08:53:22.123777+00:00"
+            },
+            {
+                "update": 1,
+                "motivation": "caffe",
+                "timestamp": "2025-05-13T08:58:34.238925+00:00"
+            },
+            {
+                "update": -1000,
+                "motivation": "freddura di merda",
+                "timestamp": "2025-05-13T09:04:16.522451+00:00"
+            },
+            {
+                "update": -1000,
+                "motivation": "\u00e8 un fascista maschilista",
+                "timestamp": "2025-05-16T10:33:50.912010+00:00"
+            },
+            {
+                "update": -100,
+                "motivation": "Boh",
+                "timestamp": "2025-05-16T18:11:32.329911+00:00"
+            },
+            {
+                "update": -100000,
+                "motivation": "Ha tagliato male la pizza",
+                "timestamp": "2025-05-16T18:26:00.275334+00:00"
+            },
+            {
+                "update": -100000,
+                "motivation": "\u00c8 un cattivo marito",
+                "timestamp": "2025-05-16T18:46:43.338471+00:00"
+            },
+            {
+                "update": 1,
+                "motivation": "caffe",
+                "timestamp": "2025-05-21T15:44:23.271061+00:00"
+            },
+            {
+                "update": 1,
+                "motivation": "grafico bello",
+                "timestamp": "2025-05-22T10:22:33.391809+00:00"
+            },
+            {
+                "update": 100,
+                "motivation": "pulisce tazza",
+                "timestamp": "2025-05-22T10:23:53.422348+00:00"
+            },
+            {
+                "update": -1000000,
+                "motivation": "giocano senza di noi",
+                "timestamp": "2025-05-22T10:31:54.427964+00:00"
+            }
+        ]
+    },
+    "datavix": {
+        "score": -203,
+        "history": [
+            {
+                "update": -5,
+                "motivation": "ha preso il caff\u00e8 da solo",
+                "timestamp": "2025-05-07T11:26:05.200811+00:00"
+            },
+            {
+                "update": 10,
+                "motivation": "punti di benevolenza",
+                "timestamp": "2025-05-07T11:26:42.962282+00:00"
+            },
+            {
+                "update": -200,
+                "motivation": "dice idiozie",
+                "timestamp": "2025-05-13T08:48:40.045542+00:00"
+            },
+            {
+                "update": 1,
+                "motivation": "caffe",
+                "timestamp": "2025-05-13T08:58:37.857051+00:00"
+            },
+            {
+                "update": -10,
+                "motivation": "mezza giornata",
+                "timestamp": "2025-05-21T15:44:50.968056+00:00"
+            },
+            {
+                "update": 1,
+                "motivation": "mangia",
+                "timestamp": "2025-05-22T10:21:53.935003+00:00"
+            }
+        ]
+    },
+    "aimi": {
+        "score": 14,
+        "history": [
+            {
+                "update": 10,
+                "motivation": "entry bonus",
+                "timestamp": "2025-05-14T11:15:09.700755+00:00"
+            },
+            {
+                "update": 2,
+                "motivation": null,
+                "timestamp": "2025-05-21T13:34:34.126555+00:00"
+            },
+            {
+                "update": 2,
+                "motivation": "caffe",
+                "timestamp": "2025-05-21T15:45:19.411984+00:00"
             }
         ]
     }

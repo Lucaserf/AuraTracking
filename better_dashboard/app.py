@@ -8,7 +8,7 @@ from datetime import datetime, timezone
 app = Flask(__name__)
 
 # Configure logging
-logging.basicConfig(level=logging.INFO)
+logging.basicConfig(level=logging.DEBUG)
 
 # --- Data Persistence Setup ---
 DATA_FILE = "reputation_data.json"
@@ -76,8 +76,8 @@ def _update_reputation_internal(name, update_value, motivation=None):
             return {"error": "'update' must be a number"}, 400
 
         # Special handling for 'serf' - always positive update
-        if name == "serf":
-            update_value = abs(update_value)
+        # if name == "serf":
+        #     update_value = abs(update_value)
 
         # Validate motivation (allow None or string)
         if motivation is not None and not isinstance(motivation, str):
@@ -251,6 +251,7 @@ def show_dashboard():
         for name, data in sorted_users_list:
             last_motivation_text = None
             user_history = data.get("history", [])  # Get history list safely
+            current_total_score = data.get("score", 0)  # Get current total score
 
             # Check if history is a list and not empty
             if isinstance(user_history, list) and user_history:
@@ -266,12 +267,74 @@ def show_dashboard():
                 if last_motivation_entry:
                     last_motivation_text = last_motivation_entry.get("motivation")
 
+            # Prepare data for the chart
+            user_chart_history_list = []  # Renamed to avoid confusion
+
+            # Calculate the sum of all updates in the existing history
+            sum_of_all_updates_in_history = sum(
+                h.get("update", 0) for h in user_history if isinstance(h, dict)
+            )
+            # Determine the score before any recorded history events
+            initial_score_offset = current_total_score - sum_of_all_updates_in_history
+
+            cumulative_score_from_history = 0
+
+            app.logger.debug(
+                f"User '{name}': Raw history has {len(user_history)} entries."
+            )
+
+            # Ensure history is sorted by timestamp
+            sorted_history_for_chart = sorted(
+                [
+                    h
+                    for h in user_history
+                    if isinstance(h, dict) and "timestamp" in h and "update" in h
+                ],
+                key=lambda x: x["timestamp"],
+            )
+
+            app.logger.debug(
+                f"User '{name}': Filtered to {len(sorted_history_for_chart)} entries for chart."
+            )
+            if (
+                not sorted_history_for_chart and user_history
+            ):  # Log if filtering removed all entries but raw history existed
+                app.logger.warning(
+                    f"User '{name}': All raw history entries were filtered out. Check format. Raw: {user_history[:5]}"
+                )
+
+            for hist_entry in sorted_history_for_chart:
+                cumulative_score_from_history += hist_entry["update"]
+                # The score at this point in time is the initial offset + cumulative updates since history started
+                score_at_timestamp = (
+                    initial_score_offset + cumulative_score_from_history
+                )
+                user_chart_history_list.append(
+                    {
+                        "timestamp": hist_entry["timestamp"],
+                        "score": score_at_timestamp,
+                        "motivation": hist_entry.get("motivation"),
+                        "update": hist_entry[
+                            "update"
+                        ],  # Add the delta (original update value)
+                    }
+                )
+
+            user_chart_history_json_string = json.dumps(user_chart_history_list)
+
+            if not user_chart_history_list:  # Check the list before dumping
+                app.logger.info(
+                    f"User '{name}': No chart history data will be generated (list is empty)."
+                )
+
             users_for_template.append(
                 {
                     "name": name,  # Keep lowercase name for IDs/JS
                     "display_name": name.capitalize(),  # Capitalize for display
-                    "reputation": data["score"],
+                    "reputation": current_total_score,  # Use the authoritative current score
                     "last_motivation": last_motivation_text,
+                    # Pass the pre-serialized JSON string
+                    "chart_history_json": user_chart_history_json_string,
                 }
             )
 
