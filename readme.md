@@ -127,7 +127,7 @@ The server exposes the following endpoints:
 *   **Description:** Returns a list of all users, sorted by their reputation score in descending order (highest score first).
 *   **Example Request (`curl`):**
     ```bash
-    curl http://192.168.17.51:5000/ranking
+    curl http://192.168.17.148:5000/ranking
     ```
 *   **Success Response (200 OK):**
     ```json
@@ -151,7 +151,7 @@ The server exposes the following endpoints:
 *   **Description:** Removes all user reputation data from the server's memory. Use with caution! Intended primarily for testing purposes.
 *   **Example Request (`curl`):**
     ```bash
-    curl -X POST http://192.168.17.51:5000/clear
+    curl -X POST http://192.168.17.148:5000/clear
     ```
 *   **Success Response (200 OK):**
     ```json
@@ -166,7 +166,7 @@ The server exposes the following endpoints:
 *   **Description:** A simple endpoint to check if the server is running.
 *   **Example Request (`curl`):**
     ```bash
-    curl http://192.168.17.51:5000/
+    curl http://192.168.17.148:5000/
     ```
 *   **Success Response (200 OK):**
     ```

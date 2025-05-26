@@ -65,7 +65,7 @@
         ]
     },
     "serf": {
-        "score": -99999010001001021238,
+        "score": -10,
         "history": [
             {
                 "update": 10,
@@ -251,11 +251,56 @@
                 "update": -1000000,
                 "motivation": "giocano senza di noi",
                 "timestamp": "2025-05-22T10:32:05.811730+00:00"
+            },
+            {
+                "update": -1,
+                "motivation": "generico",
+                "timestamp": "2025-05-22T10:41:09.170115+00:00"
+            },
+            {
+                "update": -100,
+                "motivation": "capitain",
+                "timestamp": "2025-05-22T10:49:52.648298+00:00"
+            },
+            {
+                "update": 100,
+                "motivation": "goat",
+                "timestamp": "2025-05-22T10:55:26.912743+00:00"
+            },
+            {
+                "update": 1000000000,
+                "motivation": "non trova lo zucchero",
+                "timestamp": "2025-05-22T11:12:37.201961+00:00"
+            },
+            {
+                "update": -2000000000000,
+                "motivation": "errata corrige - non trova lo zucchero",
+                "timestamp": "2025-05-22T11:13:04.232136+00:00"
+            },
+            {
+                "update": 999999999999999983222784,
+                "motivation": "tanto impegno per questa dashboard",
+                "timestamp": "2025-05-22T12:33:48.909147+00:00"
+            },
+            {
+                "update": -999900000987999950077952,
+                "motivation": "adjustment",
+                "timestamp": "2025-05-22T12:34:38.565407+00:00"
+            },
+            {
+                "update": -32123593,
+                "motivation": "ritorno alle origini",
+                "timestamp": "2025-05-22T12:35:02.488467+00:00"
+            },
+            {
+                "update": -10,
+                "motivation": "poco umile",
+                "timestamp": "2025-05-22T12:36:55.812516+00:00"
             }
         ]
     },
     "nico": {
-        "score": -99978,
+        "score": 10,
         "history": [
             {
                 "update": -10,
@@ -321,11 +366,31 @@
                 "update": 1,
                 "motivation": "caffe",
                 "timestamp": "2025-05-22T10:02:08.746814+00:00"
+            },
+            {
+                "update": -10,
+                "motivation": "ha aggiunto punti al posto di toglierli",
+                "timestamp": "2025-05-22T11:14:05.100939+00:00"
+            },
+            {
+                "update": -1000,
+                "motivation": "dono per frulvio",
+                "timestamp": "2025-05-22T12:29:38.793018+00:00"
+            },
+            {
+                "update": 100988,
+                "motivation": "ritorno alle origini",
+                "timestamp": "2025-05-22T12:36:12.030776+00:00"
+            },
+            {
+                "update": 10,
+                "motivation": "porta i dolcetti agli amichetti",
+                "timestamp": "2025-05-22T12:58:27.677024+00:00"
             }
         ]
     },
     "garbu": {
-        "score": -993,
+        "score": 0,
         "history": [
             {
                 "update": 20,
@@ -366,11 +431,16 @@
                 "update": 1,
                 "motivation": "caffe",
                 "timestamp": "2025-05-21T15:44:32.188283+00:00"
+            },
+            {
+                "update": 993,
+                "motivation": "ritorno alle origini",
+                "timestamp": "2025-05-22T12:36:23.868600+00:00"
             }
         ]
     },
     "capalbio": {
-        "score": 0,
+        "score": 95,
         "history": [
             {
                 "update": 100,
@@ -381,11 +451,16 @@
                 "update": -100,
                 "motivation": "impossibilitato",
                 "timestamp": "2025-05-08T11:31:17.420871+00:00"
+            },
+            {
+                "update": 95,
+                "motivation": "dono per capalbio",
+                "timestamp": "2025-05-22T12:32:15.641104+00:00"
             }
         ]
     },
     "frulvio": {
-        "score": -905,
+        "score": 1,
         "history": [
             {
                 "update": 10,
@@ -451,11 +526,26 @@
                 "update": 1,
                 "motivation": "caffe",
                 "timestamp": "2025-05-22T10:00:47.036490+00:00"
+            },
+            {
+                "update": 1000,
+                "motivation": "dono da nico",
+                "timestamp": "2025-05-22T12:29:52.579884+00:00"
+            },
+            {
+                "update": -95,
+                "motivation": "dono per capalbio perche manca",
+                "timestamp": "2025-05-22T12:31:31.849997+00:00"
+            },
+            {
+                "update": 1,
+                "motivation": "caffe",
+                "timestamp": "2025-05-22T12:32:53.157779+00:00"
             }
         ]
     },
     "william": {
-        "score": -1202267,
+        "score": 0,
         "history": [
             {
                 "update": 10,
@@ -711,11 +801,21 @@
                 "update": -1000000,
                 "motivation": "giocano senza di noi",
                 "timestamp": "2025-05-22T10:31:54.427964+00:00"
+            },
+            {
+                "update": 50,
+                "motivation": "povero william",
+                "timestamp": "2025-05-22T11:07:09.200391+00:00"
+            },
+            {
+                "update": 1202217,
+                "motivation": "perdono dal presidente",
+                "timestamp": "2025-05-22T12:31:23.501963+00:00"
             }
         ]
     },
     "datavix": {
-        "score": -203,
+        "score": 0,
         "history": [
             {
                 "update": -5,
@@ -746,6 +846,11 @@
                 "update": 1,
                 "motivation": "mangia",
                 "timestamp": "2025-05-22T10:21:53.935003+00:00"
+            },
+            {
+                "update": 203,
+                "motivation": "ritorno alle origini",
+                "timestamp": "2025-05-22T12:36:39.986588+00:00"
             }
         ]
     },
